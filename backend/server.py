@@ -28,10 +28,23 @@ class Todo(db.Model):
     is_done = db.Column(db.Boolean, default=False)
 
 
-@app.route("/api/test")
-def test():
-    return "Hello world!"
+@app.route("/api/todos")
+def get_all_todos():
+    all_todos = db.session.query(Todo).all()
+    todos_list = []
+
+    for todo in all_todos:
+        todos_list.append(
+            {
+                "id": todo.id,
+                "to_do": todo.to_do,
+                "creation_time": todo.creation_time,
+                "is_done": todo.is_done,
+            }
+        )
+
+    return jsonify(todos_list)
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
