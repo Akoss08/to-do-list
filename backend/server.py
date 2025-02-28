@@ -2,7 +2,8 @@ from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 import os
 from dotenv import load_dotenv
-from datetime import datetime
+from datetime import datetime, timezone
+from sqlalchemy.exc import StatementError
 
 load_dotenv()
 
@@ -23,19 +24,22 @@ class Todo(db.Model):
     creation_time = db.Column(
         db.DateTime,
         nullable=False,
-        default=datetime.now,
+        default=datetime.now(timezone.utc),
     )
     is_done = db.Column(db.Boolean, default=False)
 
 
-@app.route("/api/todos")
+@app.get("/api/todos")
 def get_all_todos():
-    all_todos = db.session.query(Todo).all()
-    todos_list = []
-
-    for todo in all_todos:
-        todos_list.append(
+    try:
+        all_todos = (
+            db.session.query(Todo)
+            .order_by(Todo.is_done, Todo.creation_time)
+            .all()
+        )
+        todos_list = [
             {
+                "id": todo.id,
                 "to_do": todo.to_do,
                 "creation_time": todo.creation_time,
                 "is_done": todo.is_done,
