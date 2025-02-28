@@ -36,7 +36,6 @@ def get_all_todos():
     for todo in all_todos:
         todos_list.append(
             {
-                "id": todo.id,
                 "to_do": todo.to_do,
                 "creation_time": todo.creation_time,
                 "is_done": todo.is_done,
