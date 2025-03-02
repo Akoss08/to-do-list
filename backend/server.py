@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 import os
 from dotenv import load_dotenv
@@ -8,6 +9,7 @@ from sqlalchemy.exc import StatementError
 load_dotenv()
 
 app = Flask(__name__)
+CORS(app, origins="http://localhost:5173")
 url = os.getenv("DATABASE_URL")
 
 app.config["SQLALCHEMY_DATABASE_URI"] = url
