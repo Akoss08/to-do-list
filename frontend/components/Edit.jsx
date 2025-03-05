@@ -5,8 +5,8 @@ const Edit = ({ handleSubmit, changedTask, handleTaskChange }) => {
       <button
         type="submit"
         className="
-              ml-2 text-xl cursor-pointer border-1 rounded-md m-2 pl-2 pr-2 from-green-500 
-              to-pink-400 bg-gradient-to-b hover:to-pink-500 hover:from-green-600
+              ml-2 text-xl cursor-pointer rounded-md m-2 pl-2 pr-2 from-green-500 
+              to-pink-400 bg-gradient-to-b hover:to-pink-500 hover:from-green-600 font-pacifico
               "
       >
         Submit
