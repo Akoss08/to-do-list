@@ -41,7 +41,7 @@ const Form = ({ refresh }) => {
       <button
         type="submit"
         className="
-      w-1/4 m-2 rounded-md p-1 w-1/3 break-words cursor-pointer from-sky-500 
+       m-2 rounded-md p-1 w-1/3 break-words cursor-pointer from-sky-500 
       to-orange-400 bg-gradient-to-b hover:to-sky-600 hover:from-orange-500 font-pacifico"
       >
         Add

@@ -1,7 +1,7 @@
 const Edit = ({ handleSubmit, changedTask, handleTaskChange }) => {
   return (
     <form className="flex flex-col md:flex-row items-center justify-center" onSubmit={handleSubmit}>
-      <input className="w-1/2 break-words border-2 rounded-md w-full" placeholder="Task" value={changedTask} onChange={handleTaskChange} required />
+      <input className="break-words border-2 rounded-md w-full" placeholder="Task" value={changedTask} onChange={handleTaskChange} required />
       <button
         type="submit"
         className="
