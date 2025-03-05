@@ -64,14 +64,26 @@ export default function Todo({ task, date, is_done, id, refresh }) {
     flex flex-col gap-2 items-center w-3/4 m-3 from-violet-300 rounded-xl bg-gradient-to-b
     "
     >
-      <h1 className={`m-5 ${checked && 'line-through'}`}>{getDate(date)}</h1>
+      <h1
+        className={`
+        m-5 ${checked && 'line-through'} font-serif font-bold text-xl text-center
+        `}
+      >
+        {getDate(date)}
+      </h1>
 
       <div className="flex flex-col md:flex-row items-center w-3/4 p-2">
         {clicked ? (
           <Edit handleSubmit={handleSubmit} changedTask={changedTask} handleTaskChange={(e) => setChangedTask(e.target.value)} />
         ) : (
           <>
-            <h1 className={`w-1/2 break-words ${checked && 'line-through'}`}>{changedTask}</h1>{' '}
+            <h1
+              className={`
+              w-1/2 break-words ${checked && 'line-through'} text-center font-playwrite-it
+              `}
+            >
+              {changedTask}
+            </h1>{' '}
             <div
               className="
             flex flex-col md:flex-row items-center justify-center w-1/2 gap-1 md:ml-5 mt-5 md:mt-0
