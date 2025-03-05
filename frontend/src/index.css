@@ -1,4 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Playwrite+IT+Moderna:wght@100..400&display=swap');
+@font-face {
+  font-family: Playwrite IT Moderna;
+  src: url('https://fonts.googleapis.com/css2?family=Playwrite+IT+Moderna:wght@100..400&display=swap');
+}
 @import 'tailwindcss';
+
+@theme {
+  --font-playwrite-it: Playwrite IT Moderna, "sans-serif";
+  --font-pacifico: Pacifico, "sans-serif";
+}
 
 .no-scrollbar::-webkit-scrollbar {
   display: none;
