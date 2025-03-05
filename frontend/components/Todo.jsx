@@ -66,7 +66,7 @@ export default function Todo({ task, date, is_done, id, refresh }) {
     >
       <h1
         className={`
-        m-5 ${checked && 'line-through'} font-serif font-bold text-xl text-center
+        m-5 ${checked && 'line-through'} font-serif font-bold text-xl text-center whitespace-break-spaces
         `}
       >
         {getDate(date)}
@@ -96,12 +96,12 @@ export default function Todo({ task, date, is_done, id, refresh }) {
                   onChange={handleChange}
                   className="
                   h-[1.125rem] w-[1.125rem] border-2 rounded-md accent-green-600 hover:accent-red-500
-                  cursor-pointer
+                  cursor-pointer hover:scale-150 transform transition-all
                   "
                 />
               </label>
-              <FaEdit className="ml-2 text-xl cursor-pointer" onClick={() => setClicked(true)} />
-              <ImBin className="ml-2 text-xl cursor-pointer" onClick={handleDelete} />
+              <FaEdit className="ml-2 text-xl cursor-pointer hover:scale-150 transform transition-all" onClick={() => setClicked(true)} />
+              <ImBin className="ml-2 text-xl cursor-pointer hover:scale-150 transform transition-all" onClick={handleDelete} />
             </div>
           </>
         )}
