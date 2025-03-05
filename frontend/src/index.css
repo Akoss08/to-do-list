@@ -1,1 +1,22 @@
-@import "tailwindcss"
+@import 'tailwindcss';
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scroll-gradient {
+  background: 
+    linear-gradient(rgb(170, 149, 255) 33%, rgba(208, 45, 45, 0)),
+    linear-gradient(rgba(255,255,255, 0), rgb(170, 149, 255) 66%) 0 100%,
+    radial-gradient(farthest-side at 50% 0, rgba(28,28,28, 0.75), rgba(0,0,0,0)),
+    radial-gradient(farthest-side at 50% 100%, rgba(28,28,28, 0.75), rgba(0,0,0,0)) 0 100%;
+  background-color: rgb(170, 149, 255);
+  background-repeat: no-repeat;
+  background-attachment: local, local, scroll, scroll;
+  background-size: 100% 69px, 100% 69px, 100% 23px, 100% 23px;
+}
